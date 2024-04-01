@@ -5,6 +5,7 @@
 import os
 import logging
 
+
 def check_env_variables():
     variables = [
         "VITA_LIFE_SPREADSHEET_ID",
@@ -14,6 +15,7 @@ def check_env_variables():
     for variable in variables:
         if variable not in os.environ:
             raise EnvironmentError(f"OS variable '{variable}' not found")
+
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING,
@@ -28,8 +30,10 @@ if __name__ == '__main__':
 `pip3 install python-dotenv`
 ```py
 from dotenv import load_dotenv
-...
-load_dotenv()
+
+
+if __name__ == '__main__':
+    load_dotenv()
 ```
 
 ## flask
@@ -38,7 +42,9 @@ load_dotenv()
 from flask import Flask, request
 from waitress import serve
 
+
 app = Flask(__name__)
+
 
 @app.route("/")
 def hello_world():
@@ -46,7 +52,9 @@ def hello_world():
            f"I'm alive!" \
            f"</h1>"
 
-# app.run(host='0.0.0.0', port=3010)       # debug
-# serve(app, host='0.0.0.0', port=5053)    # release
+
+if __name__ == '__main__':
+    # app.run(host='0.0.0.0', port=3000)       # debug
+    # serve(app, host='0.0.0.0', port=3000)    # release
 ```
 
