@@ -19,10 +19,10 @@ def check_env_variables():
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING,
-                        format='%(asctime)s - %(levelname)s - %(message)s')
+                        format="%(asctime)s - %(levelname)s - %(message)s")
     load_dotenv()
     check_env_variables()
-    logging.warning("init ok")
+    logging.warning('init ok')
     
 ```
 
