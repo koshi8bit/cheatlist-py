@@ -58,3 +58,22 @@ if __name__ == '__main__':
     # serve(app, host='0.0.0.0', port=3000)    # release
 ```
 
+## JSON
+
+```py
+import json
+
+with open('conf2.json') as f:
+    d = json.load(f)
+    print(d)
+    print(json.dumps(d, indent=4))
+```
+
+```json
+{
+    "a": [1,3,"asdf",true],
+    "b": {
+        "Hello": "world"
+    }
+}
+```
